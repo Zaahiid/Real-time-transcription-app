@@ -1,0 +1,51 @@
+@import 'tailwindcss';
+@import '@heroui/styles';
+
+@custom-variant short (@media (max-height: 32rem));
+
+@theme {
+  --breakpoint-xs: 22.5rem;
+
+  --animate-fade-in: fade-in 0.3s ease-out both;
+  --animate-fade-up: fade-up 0.35s ease-out both;
+  --animate-breathe: breathe 2.8s ease-in-out infinite;
+  --animate-ripple: ripple 1.8s ease-out infinite;
+  --animate-spin-in: spin-in 0.3s ease-out;
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+  }
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+  }
+
+  @keyframes breathe {
+    50% {
+      box-shadow: 0 0 0 16px color-mix(in oklab, var(--color-accent) 18%, transparent);
+    }
+  }
+
+  @keyframes ripple {
+    from {
+      opacity: 0.5;
+      transform: scale(1);
+    }
+    to {
+      opacity: 0;
+      transform: scale(1.9);
+    }
+  }
+
+  @keyframes spin-in {
+    from {
+      opacity: 0;
+      transform: rotate(-90deg) scale(0.6);
+    }
+  }
+}
